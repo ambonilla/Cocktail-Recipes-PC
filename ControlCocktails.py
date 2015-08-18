@@ -4,6 +4,7 @@
 from PyQt4.QtGui import QMainWindow
 from PyQt4.QtGui import QMessageBox
 from PyQt4.QtGui import QApplication
+from PyQt4.QtGui import QListWidget
 from PyQt4.QtCore import Qt
 from ViewCocktails import Ui_RecipesWindow
 from SQLiteConnector import SQLiteConnector
@@ -25,7 +26,8 @@ class ControlCocktail(QMainWindow):
       self.setupList()
 
    def searchCocktail(self, text):
-      items = self.ui.cocktailListWidget.findItems(text,Qt.MatchContains)
+      print text
+      items = self.completeListWidget.findItems(text,Qt.MatchContains)
       tempItemList = []
       if len(items) > 0 and text:
          for item in items:
@@ -58,12 +60,15 @@ class ControlCocktail(QMainWindow):
          while nameQuery.next():
             self.nameList.append(nameQuery.value(0).toString())
          self.ui.cocktailListWidget.addItems(self.nameList)
+         self.completeListWidget = QListWidget()
+         self.completeListWidget.addItems(self.nameList)
 
    def showTotalData(self, listWidgetItem):
       try:
          currText = listWidgetItem.text()
          currIngredients = self.newConnector.getIngredients(self.CURR_DATABASE, currText)
          currPreparation = self.newConnector.getPreparation(self.CURR_DATABASE, currText)
+         self.ui.titleLabel.setText(currText)
          self.ui.ingredientsLabel.setText(currIngredients)
          self.ui.preparationLabel.setText(currPreparation)
       except:

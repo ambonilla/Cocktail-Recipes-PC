@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'CocktailRecipes/recipeswindow.ui'
 #
-# Created: Mon Aug 17 18:31:28 2015
+# Created: Tue Aug 18 00:29:45 2015
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -72,6 +72,16 @@ class Ui_RecipesWindow(object):
         self.horizontalLayout.addWidget(self.line)
         self.verticalLayout_2 = QtGui.QVBoxLayout()
         self.verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
+        self.titleLabel = QtGui.QLabel(self.centralWidget)
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.titleLabel.setFont(font)
+        self.titleLabel.setText(_fromUtf8(""))
+        self.titleLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.titleLabel.setObjectName(_fromUtf8("titleLabel"))
+        self.verticalLayout_2.addWidget(self.titleLabel)
         self.verticalLayout_5 = QtGui.QVBoxLayout()
         self.verticalLayout_5.setObjectName(_fromUtf8("verticalLayout_5"))
         self.ingredientsBox = QtGui.QGroupBox(self.centralWidget)
@@ -89,7 +99,7 @@ class Ui_RecipesWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName(_fromUtf8("scrollArea"))
         self.scrollAreaWidgetContents = QtGui.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 457, 198))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 457, 182))
         self.scrollAreaWidgetContents.setObjectName(_fromUtf8("scrollAreaWidgetContents"))
         self.verticalLayout_8 = QtGui.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_8.setObjectName(_fromUtf8("verticalLayout_8"))
@@ -136,7 +146,7 @@ class Ui_RecipesWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollArea_2.setObjectName(_fromUtf8("scrollArea_2"))
         self.scrollAreaWidgetContents_2 = QtGui.QWidget()
-        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 457, 198))
+        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 457, 182))
         self.scrollAreaWidgetContents_2.setObjectName(_fromUtf8("scrollAreaWidgetContents_2"))
         self.verticalLayout_10 = QtGui.QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_10.setObjectName(_fromUtf8("verticalLayout_10"))
